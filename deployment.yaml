@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: helloword
+  name: helloword
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloword
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: helloword
+    spec:
+      containers:
+      - image: gcr.io/kubernetes-thao/helloword-demo:1.1.2
+        name: helloword-demo
+        resources: {}
+status: {}
+
