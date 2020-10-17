@@ -5,3 +5,10 @@ steps:
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/kubernetes-thao/helloword-demo:$TAG_NAME']
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=gs://thaok8s/config
+  - --image=gcr.io/kubernetes-thao/helloword-demo:$TAG_NAME
+  - --location=asia-southeast1-a
+  - --cluster=cluster-1
