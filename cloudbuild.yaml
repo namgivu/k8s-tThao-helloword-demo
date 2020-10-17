@@ -8,7 +8,7 @@ steps:
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
-  - --filename=gs://thaok8s/config
+  - --filename=gs://thaok8s/deployment.yaml
   - --image=gcr.io/kubernetes-thao/helloword-demo:$TAG_NAME
   - --location=asia-southeast1-a
   - --cluster=cluster-1
