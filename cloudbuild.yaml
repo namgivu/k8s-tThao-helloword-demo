@@ -14,5 +14,5 @@ steps:
   - run
   - --filename=gs://k8stthaohelloworddemo/deployment.yaml
   - --image=gcr.io/$PROJECTNAME/helloword-demo:$TAG_NAME
-  - --location=asia-southeast1-a
+  - --location=asia-southeast1-b
   - --cluster=nn-k8s-cluster
