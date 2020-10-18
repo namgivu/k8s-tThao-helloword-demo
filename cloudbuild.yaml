@@ -1,14 +1,18 @@
 steps:
-# Build the container image
+
+# Build the pod's docker image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/kubernetes-thao/helloword-demo:$TAG_NAME', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_NAME/helloword-demo:$TAG_NAME', '.']
+  #                             your GCP project name          this is git tag
+
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/kubernetes-thao/helloword-demo:$TAG_NAME']
+  args: ['push', 'gcr.io/$PROJECT_NAME/helloword-demo:$TAG_NAME']
+
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
-  - --filename=gs://thaok8s/deployment.yaml
-  - --image=gcr.io/kubernetes-thao/helloword-demo:$TAG_NAME
+  - --filename=gs://k8stthaohelloworddemo/deployment.yaml
+  - --image=gcr.io/$PROJECT_NAME/helloword-demo:$TAG_NAME
   - --location=asia-southeast1-a
-  - --cluster=cluster-1
+  - --cluster=nn-k8s-cluster
