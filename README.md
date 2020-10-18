@@ -8,3 +8,12 @@
 02 put the two in cloudbuild
 
 # run trigger and add key for :kubectl to the cloudbuild machine when prompoted
+
+# more note
+view the git tag https://github.com/namgivu/k8s-tThao-helloword-demo/tags
+
+view trigger                           https://console.cloud.google.com/cloud-build/triggers ?authuser=1&project=proud-lamp-289904
+view trigger build progress and result https://console.cloud.google.com/cloud-build/builds   ?authuser=1&project=proud-lamp-289904
+
+the storage bucket https://console.cloud.google.com/storage/browser/k8stthaohelloworddemo;tab=objects?authuser=1&project=proud-lamp-289904
+.                  .                                                bucket name                       .          project id               
