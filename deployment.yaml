@@ -18,7 +18,7 @@ spec:
         app: helloword
     spec:
       containers:
-      - image: gcr.io/kubernetes-thao/helloword-demo:1.1.2
+      - image: gcr.io/proud-lamp-289904/helloword-demo:1.1.6d
         name: helloword-demo
         resources: {}
 status: {}
